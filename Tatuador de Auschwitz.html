@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Tatuador de Auschwitz | Apresentação</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #c9a66b;
+  --cream: #e8dfd0;
+  --dark: #11110f;
+  --panel: #1b1a17;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(17,17,15,.94);
+  border-bottom: 1px solid #ffffff12;
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 12px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 10% 80px;
+  background:
+    linear-gradient(90deg, #11110f 10%, #11110fd9 55%, #11110f80),
+    linear-gradient(0deg, #11110f, transparent 60%),
+    url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85')
+    center/cover;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 11px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 9vw, 105px);
+  line-height: .95;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 540px;
+  color: #c4bdae;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 15px 27px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 11px;
+  transition: .3s;
+}
+
+.button:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+section {
+  padding: 110px 10%;
+}
+
+.section-label {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 1.9;
+  color: #c5beb1;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.book-cover {
+  min-height: 480px;
+  background: linear-gradient(145deg, #383126, #171612);
+  border: 1px solid #c9a66b55;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  text-align: center;
+  box-shadow: 20px 20px 60px #0008;
+}
+
+.book-cover small {
+  letter-spacing: 5px;
+  color: var(--gold);
+}
+
+.book-cover strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  line-height: 1;
+  margin: 35px 0;
+}
+
+.book-cover span {
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  padding: 35px;
+  border: 1px solid #ffffff10;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.story {
+  background: #191814;
+}
+
+.story-content {
+  max-width: 850px;
+}
+
+.quote {
+  border-left: 2px solid var(--gold);
+  padding: 20px 30px;
+  margin-top: 35px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--gold);
+}
+
+.trailer-box {
+  min-height: 350px;
+  background: linear-gradient(135deg, #29251e, #11110f);
+  border: 1px solid #c9a66b55;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.play {
+  width: 75px;
+  height: 75px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.trailer-box h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+video {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 25px;
+  display: none;
+}
+
+.opinion {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  border-top: 1px solid #ffffff15;
+  color: #827c70;
+  font-size: 12px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+@media(max-width: 800px) {
+  header {
+    padding: 15px 5%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 180px 7% 80px;
+  }
+
+  section {
+    padding: 80px 7%;
+  }
+
+  .book-grid,
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .book-cover {
+    min-height: 350px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">O Tatuador de Auschwitz</div>
+  <nav>
+    <a href="#inicio">INÍCIO</a>
+    <a href="#livro">LIVRO</a>
+    <a href="#personagens">PERSONAGENS</a>
+    <a href="#historia">HISTÓRIA</a>
+    <a href="#trailer">TRAILER</a>
+    <a href="#opiniao">OPINIÃO</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="eyebrow">UMA HISTÓRIA QUE NÃO DEVE SER ESQUECIDA</div>
+    <h1>O TATUADOR<br>DE <span>AUSCHWITZ</span></h1>
+    <p>
+      Inspirado no testemunho de Lale Sokolov, este livro
+      conta uma história de sobrevivência, coragem e esperança
+      em dos períodos mais sombrios da História.
+    </p>
+    <a href="#livro" class="button">DESCOBRIR A HISTÓRIA ↓</a>
+  </div>
+</section>
+
+<section id="livro">
+  <div class="book-grid">
+    <div class="book-cover">
+      <small>HEATHER MORRIS</small>
+      <strong>O TATUADOR<br>DE AUSCHWITZ</strong>
+      <span>UMA HISTÓRIA DE SOBREVIVÊNCIA</span>
+    </div>
+
+    <div>
+      <div class="section-label">01 — A OBRA</div>
+      <h2>Um livro. Uma história. Uma memória.</h2>
+      <p>
+        Publicado originalmente em 2018, O Tatuador de Auschwitz
+        é um romance histórico escrito por Heather Morris.
+        A obra inspira-se no testemunho de Lale Sokolov,
+        um sobrevivente do campo de concentração de Auschwitz.
+      </p>
+      <br>
+      <p>
+        A narrativa acompanha a experiência de Lale durante
+        a Segunda Guerra Mundial e a sua relação com Gita.
+      </p>
+      <br>
+      <p><span class="gold">Autora:</span> Heather Morris</p>
+      <p><span class="gold">Género:</span> Romance histórico</p>
+      <p><span class="gold">Publicação:</span> 2018</p>
+    </div>
+  </div>
+</section>
+
+<section id="personagens">
+  <div class="section-label">02 — PERSONAGENS</div>
+  <h2>As pessoas por detrás da história</h2>
+
+  <div class="cards">
+    <article class="card">
+      <h3>Lale Sokolov</h3>
+      <p>
+        É o protagonista da narrativa. É um jovem judeu que,
+        em Auschwitz, é obrigado a trabalhar como tatuador
+        dos números de identificação dos prisioneiros.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Gita Furman</h3>
+      <p>
+        É uma jovem prisioneira que Lale conhece no campo.
+        A relação entre os dois torna-se uma parte central
+        da história.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="story" id="historia">
+  <div class="story-content">
+    <div class="section-label">03 — A HISTÓRIA</div>
+    <h2>Uma história de sobrevivência</h2>
+    <p>
+      Durante a Segunda Guerra Mundial, Lale Sokolov é
+      deportado para Auschwitz. No campo, recebe a função
+      de tatuar os números de identificação dos restantes
+      prisioneiros.
+    </p>
+    <br>
+    <p>
+      É nesse contexto que conhece Gita. Apesar das
+      condições desumanas em que vivem, desenvolvem uma
+      ligação que lhes dá força para continuar.
+    </p>
+    <br>
+    <p>
+      A narrativa mostra as dificuldades enfrentadas pelos
+      prisioneiros e a importância da memória, da esperança
+      e da dignidade humana.
+    </p>
+
+    <div class="quote">
+      Uma história sobre a capacidade humana de preservar
+      a esperança mesmo perante a adversidade.
+    </div>
+  </div>
+</section>
+
+<section id="temas">
+  <div class="section-label">04 — TEMAS PRINCIPAIS</div>
+  <h2>O que podemos retirar desta obra?</h2>
+
+  <div class="cards">
+    <article class="card">
+      <h3>Sobrevivência</h3>
+      <p>A luta diária para continuar vivo num contexto de extrema violência e perseguição.</p>
+    </article>
+
+    <article class="card">
+      <h3>Esperança</h3>
+      <p>A importância de acreditar num futuro melhor, mesmo em circunstâncias muito difíceis.</p>
+    </article>
+
+    <article class="card">
+      <h3>Memória</h3>
+      <p>A necessidade de recordar os acontecimentos históricos para evitar que sejam esquecidos.</p>
+    </article>
+
+    <article class="card">
+      <h3>Dignidade humana</h3>
+      <p>O valor da vida humana e a importância de respeitar os direitos de todas as pessoas.</p>
+    </article>
+  </div>
+</section>
+
+<section id="trailer">
+  <div class="section-label">05 — EXPERIÊNCIA CINEMATOGRÁFICA</div>
+  <h2>O trailer</h2>
+
+  <div class="trailer-box">
+    <div class="play">▶</div>
+    <h3>O Tatuador de Auschwitz</h3>
+    <p>Uma história que merece ser conhecida.</p>
+
+    <!-- Coloca o teu vídeo na pasta do projeto com o nome trailer.mp4 -->
+    <video id="trailerVideo" controls>
+      <source src="trailer.mp4" type="video/mp4">
+      O teu navegador não suporta este vídeo.
+    </video>
+
+    <button class="button" onclick="playTrailer()">VER TRAILER</button>
+  </div>
+</section>
+
+<section id="opiniao">
+  <div class="opinion">
+    <div class="section-label">06 — REFLEXÃO PESSOAL</div>
+    <h2>Porque recomendo este livro?</h2>
+    <p>
+      Considero que O Tatuador de Auschwitz é uma obra
+      importante porque nos permite conhecer uma realidade
+      histórica muito difícil através de uma narrativa
+      centrada em experiências humanas.
+    </p>
+    <br>
+    <p>
+      Recomendo a leitura porque nos faz refletir sobre
+      a liberdade, a dignidade humana e a importância
+      de nunca esquecer o passado.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>O Tatuador de Auschwitz · Heather Morris</p>
+  <p>Trabalho escolar · 10.º Ano</p>
+</footer>
+
+<script>
+function playTrailer() {
+  const video = document.getElementById("trailerVideo");
+  video.style.display = "block";
+  video.play();
+  video.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+</script>
+
+</body>
+</html>
